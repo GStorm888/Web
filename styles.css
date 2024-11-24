@@ -1,0 +1,45 @@
+body {
+    font-family: "Gill", sans-serif;
+
+}
+
+h1 {
+    color: #6261E2;
+}
+
+p { 
+    color: gray;
+}
+
+div {
+
+}
+
+#img{
+    height: 100px;
+    width: 100px;
+}
+
+#main{
+    text-align: center;
+}
+
+.centre_text {
+
+}
+
+.card_with_question {
+    background-color: #ebecff;
+    color: black;
+    width: 200px;
+    height: auto;
+    padding: 16px;
+    margin: 10px;
+    border-radius: 14px;
+    font-size: 14px;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+}
