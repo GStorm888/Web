@@ -1,6 +1,5 @@
 body {
     font-family: "Gill", sans-serif;
-
 }
 
 h1 {
@@ -39,7 +38,23 @@ div {
     font-size: 14px;
 }
 
-.cards{
+.cards {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.smart-search-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.smart_search_text {
+    display: flex;
+    justify-content: center;
+}
+
+#search_img {
+    width: 10px;
+    height: 10px;
 }
