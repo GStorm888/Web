@@ -7,31 +7,53 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="centre_text" id="main">
-            <img src="logo.svg" alt="Лого РУВИКИ" id="img"/>
-            <h1>
-                Ищите по-новому
-            </h1>
-            <p>
-                Спрашивайте то, что хотите найти в РУВИКИ.
-                <br>
-                Умный поиск поможет!
-            </p>
-        </div>
-
-        <div class="smart-search-block">
-            <div class="smart_search_text">
-                Умный поиск поможет разобраться
-            </div> 
-            <div class="cards">
-                <div class="card_with_question">
-                    Почему электромобили массово появились только сейчас?
+        <div class="header">
+            <div class="header_menu">
+                <a href="#">
+                    <img src="logo.svg" alt="Лого РУВИКИ" id="ruwiki_icon"/>
+                </a>
+                <div id="header_buttons">
+                    <button class="button_login ">Войти</button>
+                    <button class="button_change_font">Aа</button>                  
                 </div>
-                <div class="card_with_question">
-                    Какие открытия привели к развитию современных технологий?
+            </div>
+            <div class="centre_text" id="main">
+                <img src="lupa.svg" alt="Лупа РУВИКИ" class="img"/>
+                <h1>
+                    Ищите по-новому
+                </h1>
+                <p>
+                    Спрашивайте то, что хотите найти в РУВИКИ.
+                    <br>
+                    Умный поиск поможет!
+                </p>
+            </div>
+            <div class="search_field">
+                <input type="text" id="search_text" size="80" placeholder="Найти ответ на вопрос">
+            </div>
+            <div class="smart-search-block">
+                <div class="smart_search_text">
+                    Умный поиск поможет разобраться
+                </div> 
+                <div class="cards">
+                    <button class="card_with_question" onclick="alert('привет!')">
+                        Почему электромобили массово появились только сейчас?
+                    </button>
+                    <button class="card_with_question">
+                        Какие открытия привели к развитию современных технологий?
+                    </button>
+                    <button class="card_with_question">
+                        Чем отличаются высотки в Москве от небоскрёбов Нью Йорка?
+                    </button>
                 </div>
-                <div class="card_with_question">
-                    Чем отличаются высотки в Москве от небоскрёбов Нью Йорка?
+                <div class="search_button_block">
+                <butto class="search_button">
+                    <img src="search.svg" 
+                    alt="Иконка поиска" 
+                    id="search_img"
+                    />
+                    Поиск без нейросети
+                </button>
                 </div>
             </div>
             <div class="smart-search-text">
