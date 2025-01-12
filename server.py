@@ -6,6 +6,10 @@ app = Flask(__name__)
 def ruwiki():
     return render_template('ruwiki.html')
 
+@app.route('/sonic')
+def sonic_article():
+    return render_template('sonic_article.html')
+
 @app.route('/hello')
 def hello():
     return "Hello world!"
