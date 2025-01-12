@@ -1,60 +1,81 @@
-<!DOCTYPE html>
+<!--Файл кода для разметки главной страницы сайта-->
+<!DOCTYPE html> <!-- инициализация HTML-->
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Рувики</title>
-        <link rel="stylesheet" href="../static/styles.css">
+<html><!--Начало разметки (вида сайта)-->
+    <head> <!--Голова кода-->
+        <meta charset="utf-8"> <!--Тип кодировки HTML документа-->
+        <title>Рувики</title> <!--Текст который отображаемы текст вместо цифр вверху-->
+        <link rel="stylesheet" href="../static/styles.css"><!--Файлы в которых стили-->
     </head>
-    <body>
-        <div class="header">
-            <div class="header_menu">
-                <a href="#">
-                    <img src="../static/logo.svg" alt="Лого РУВИКИ" id="ruwiki_icon"/>
-                </a>
-                <div id="header_buttons">
-                    <button class="button_login ">Войти</button>
-                    <button class="button_change_font">Aа</button>                  
+    <body> <!--Тело кода-->
+        <div id="search_new">
+
+            <div class="header"> <!--Верхняя часть сайта(div это 1 блок кода их очень много)-->
+                <div class="header_menu"><!--Создание класса-->
+                    <a href="#"><!--# обозначае переход на эту же страницу-->
+                        <img src="../static/logo.svg" alt="Лого РУВИКИ" id="ruwiki_icon"/><!--Добавление картинки-->
+                    </a><!--Нужно бля добавления кртинки-->
+                    <div id="header_buttons"><!--Обозначение ID-->
+                        <button class="button_login ">Войти</button><!--Создание кнопки-->
+                        <button class="button_change_font">Aа</button>                  
+                    </div>
+                </div>
+                <div class="centre_text" id="main">
+                    <img src="../static/lupa.svg" alt="Лупа РУВИКИ" class="img"/>
+
+                    <h1>Ищите по-новому</h1><!--h1 загаловок страницы(h используеся только 1 раз, есть исключения)-->
+                    <p id="question"><!--Обозначение параграфа-->
+                        Спрашивайте то, что хотите найти в РУВИКИ.
+                        <br><!--переход на новую строку-->
+                        Умный поиск поможет!
+                    </p>
+                </div>
+                <div class="search_field">
+                    <input type="text" id="search_text" size="80" placeholder="Найти ответ на вопрос"><!--Поле для ввода текста-->
+                </div>
+                <div class="smart-search-block">
+                    <div class="smart_search_text">
+                        Умный поиск поможет разобраться
+                    </div> 
+                    <div class="cards">
+                        <button class="card_with_question" onclick="alert('Привет!')"><!--onclick вывод текста при нажатии на кнопку-->
+                            Почему электромобили массово появились только сейчас?
+                        </button>
+                        <button class="card_with_question">
+                            Какие открытия привели к развитию современных технологий?
+                        </button>
+                        <button class="card_with_question">
+                            Чем отличаются высотки в Москве от небоскрёбов Нью Йорка?
+                        </button>
+                    </div>
+                    <div class="search_button_block">
+                    <button class="search_button">
+                        <img src="../static/search.svg" 
+                        alt="Иконка поиска" 
+                        id="search_img"/>
+                        Поиск без нейросети
+                    </button>
+                    </div>
                 </div>
             </div>
-            <div class="centre_text" id="main">
-                <img src="../static/lupa.svg" alt="Лупа РУВИКИ" class="img"/>
-                <h1>
-                    Ищите по-новому
-                </h1>
-                <p>
-                    Спрашивайте то, что хотите найти в РУВИКИ.
-                    <br>
-                    Умный поиск поможет!
+        </div>
+
+        <div id="head_for_you">
+            <div id="for_you">
+                <p class="card_for_you">
+                    <strong>Для вас</strong>
                 </p>
-            </div>
-            <div class="search_field">
-                <input type="text" id="search_text" size="80" placeholder="Найти ответ на вопрос">
-            </div>
-            <div class="smart-search-block">
-                <div class="smart_search_text">
-                    Умный поиск поможет разобраться
-                </div> 
-                <div class="cards">
-                    <button class="card_with_question" onclick="alert('привет!')">
-                        Почему электромобили массово появились только сейчас?
-                    </button>
-                    <button class="card_with_question">
-                        Какие открытия привели к развитию современных технологий?
-                    </button>
-                    <button class="card_with_question">
-                        Чем отличаются высотки в Москве от небоскрёбов Нью Йорка?
-                    </button>
-                </div>
-                <div class="search_button_block">
-                <butto class="search_button">
-                    <img src="../static/search.svg" 
-                    alt="Иконка поиска" 
-                    id="search_img"/>
-                    Поиск без нейросети
-                </button>
-                </div>
-            </div>
+                <p class="card_for_you">
+                    <strong>Рекомендации РУВИКИ</strong>
+                </p>
+                <p class="card_for_you">
+                    <strong>Новые статьи</strong>
+                </p>
+                <p id="count_articles">
+                    Сейчас много статей <br>на русском языке
+                </p>
+            </div> 
+            <div class="create-line"></div> 
         </div>
     </body>
 </html>
