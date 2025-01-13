@@ -1,17 +1,23 @@
+/*Файл css служит для декорирования(прописывает стили объектам)*/
+
+/*
+
+
+*/
 body {
-    font-family: "Gill", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
-    background-color:#e7e5ef; 
+    font-family: "Gill", sans-serif; /*Выбор шрифта */
+    display: flex; /*Организовывает объекты*/
+    flex-direction: column; /*Упорядочивает объекты  в столбец*/
+    align-items: center;   /*Центрирование объектов*/
+    background-color:#e7e5ef; /*Цвет фона*/
 }
 
 h1 {
-    color: transparent;
-    font-size: 50px;
-    background-image: linear-gradient(0deg, #6261E2, #b74ff7);
-    background-clip: text;
-    margin-top: 20px;
+    color: transparent; /*Цвет объекта*/
+    font-size: 50px;/*Размер текста*/
+    background-image: linear-gradient(0deg, #6261E2, #b74ff7); /*Добавление градиента*/
+    background-clip: text;/*Границы фона и объекта*/
+    margin-top: 20px;/*Внешние отступы объекта*/
 }
 
 #question {
@@ -26,7 +32,7 @@ h1 {
     align-items: center;
 }
 .img{
-    height: 58px;
+    height: 58px;/*Высота объекта*/
     width: 58px;
 }
 
@@ -35,19 +41,19 @@ h1 {
 }
 
 .card_with_question {
-    border: none;
+    border: none;/*Границы(оконтовка) объекта*/
     background-color: #ebecff;
     color: black;
     width: 200px;
     height: auto;
-    padding: 16px;
+    padding: 16px;/*Внутренние отступы объекта(между краем и содержимым)*/
     margin: 3px;
-    border-radius: 14px;
+    border-radius: 14px;/*закругление углов*/
     font-size: 14px;
 }
 .card_with_question:hover {
     background-color: #caccf8;
-    cursor: pointer;
+    cursor: pointer;/*При наведении появляется кулак с пальцем*/
 }
 .cards {
     display: flex;
@@ -117,7 +123,7 @@ h1 {
     border-radius: 15px;
     padding: 3px 10px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: bold;/*Полужирный шрифт*/
 }
 
 .header_menu{
@@ -140,7 +146,7 @@ h1 {
     height: 64px;
     border-radius: 20px;
     font-size: 16px;
-    text-indent: 5px;
+    text-indent: 5px;/*Отступ перед строкой*/
 }
 
 #search_new {
@@ -148,7 +154,7 @@ h1 {
     width:100%;
     height: auto;
     padding:15px;
-    border-bottom-left-radius: 40px;
+    border-bottom-left-radius: 40px;/*Закругление на определенном углу*/
     border-bottom-right-radius: 40px;
 }
 
@@ -156,25 +162,29 @@ h1 {
     width: 100%;
     height: auto;
     display: flex;
+    border-bottom: 3px solid #32a1ce;/*Оконтовка объекта с определенной стороны*/
 }
 
 .card_for_you {
     margin: 10px;
 }
 
-.create-line {
-    width: 60%;
-    height: 1px;
-    border-top: 3px solid #32a1ce;
-    display: flex;
-    justify-content: start;
-  }
-
 #head_for_you {
     width: 100%;
     height: auto;
+    display: grid;
+    justify-content: space-between;/*Расстановка объектов на страницу*/
 }
 
 #count_articles {
     color:#7b7c80;
+    position: absolute;/*Ставит объект относительно элементов*/
+    right: 0;/*Начало с правого края*/
+}
+
+#for_you_and_count {
+    width: 220%;
+    height: auto;
+    display: flex;
+    justify-content: start;
 }
