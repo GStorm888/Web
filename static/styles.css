@@ -1,9 +1,5 @@
 /*Файл css служит для декорирования(прописывает стили объектам)*/
 
-/*
-
-
-*/
 body {
     font-family: "Gill", sans-serif; /*Выбор шрифта */
     display: flex; /*Организовывает объекты*/
@@ -183,7 +179,7 @@ h1 {
 }
 
 #for_you_and_count {
-    width: 220%;
+    width: auto;
     height: auto;
     display: flex;
     justify-content: start;

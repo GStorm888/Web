@@ -23,7 +23,10 @@ def find_max():
         return f"<h1> максимум это число а: {a}</h1>"
     else:
         return f"<h1> максимум это число b: {b}</h1>"
-
+    
+@app.route("/base")
+def base():
+    return render_template("base.html", title="Китайский новый год")
 
 if __name__ == '__main__':
     app.run(debug=True)
