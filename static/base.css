@@ -1,9 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: "Gill", sans-serif;
     display: flex; 
     flex-direction: column;
     align-items: center;   
-    background-color:#e7e5ef; 
+    background-color:#f8f9fa; 
     }
 hr {
     width: 100%;
@@ -15,7 +19,12 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
     

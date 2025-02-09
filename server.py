@@ -8,7 +8,7 @@ def ruwiki():
 
 @app.route('/sonic')
 def sonic_article():
-    return render_template('sonic_article.html')
+    return render_template('article.html')
 
 @app.route('/hello')
 def hello():
