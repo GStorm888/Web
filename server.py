@@ -18,6 +18,17 @@ def sonic_article():
                             text_article=text_article,
                             article_image_path=article_image_path)
 
+@app.route('/naklz')
+def naklz_article():
+    text_article="""Ехидна Наклз[2] (яп. ナックルズ・ザ・エキドゥナ Наккурудзу дза Экидуна, англ. Knuckles the Echidna) — персонаж видеоигр, телешоу и комиксов серии Sonic the Hedgehog. Его прозвища — «Knuckie», «Rad Red», «Red Storm», «Knux», и «Knucklehead». Создан Такаси Юдой. Первое появление — игра Sonic the Hedgehog 3"""
+    article_image_title="Ехидна Наклз"
+    title_article="Ехидна Наклз"
+    article_image_path="static/Naklz.png"
+    return render_template('article.html', title_article=title_article,
+                           article_image_title=article_image_title,
+                            text_article=text_article,
+                            article_image_path=article_image_path)
+
 @app.route('/hello')
 def hello():
     return "Hello world!"
