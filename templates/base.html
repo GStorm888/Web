@@ -14,7 +14,12 @@
 
     <div class="header">
         <div class="header_menu">
-            <a href="http://127.0.0.1:5000"><img src="../static/logo.svg" alt="Лого РУВИКИ" id="ruwiki_icon" /></a>
+            <a href="{{ url_for('index') }}">
+            <img
+            src="{{ url_for('static', filename='logo.svg') }}"
+             alt="Лого РУВИКИ"
+              id="ruwiki_icon" />
+            </a>
             <div id="header_buttons">
                 <button class="button_login ">Войти</button>
                 <button class="button_change_font">Aа</button>
