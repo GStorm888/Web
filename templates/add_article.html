@@ -11,24 +11,24 @@
 {% block content %}
 
 <h1>Создать статью</h1>
-<form class='add_article_form' action="{{ url_for('add_article') }}" method="POST" enctype="mulrtpart/form-data">
+<form class='add_article_form' action="{{ url_for('add_article') }}" method="POST" enctype="multipart/form-data">
 
     <div class="form_group"></div>
         <label for="title">Название статьи:</label>
-        <input type="text" id="title", name="title", required>
+        <input type="text" id="title" name="title" required>
     </div>
 
     <div class="form_group"></div>
         <label for="content">Содержание сатьи:</label>
-        <textarea name="content" id="content", required></textarea>
+        <textarea name="content" id="content" required></textarea>
     </div>
 
     <div class="form_group"></div>
         <label for="photo">Прикрепить фото(jpg, svg, png):</label>
-        <input type="file" id="photo" name="photo", accept=".jpg, .jpeg, .png, .svg" required>
+        <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png, .svg" required>
     </div>
 
-    <input type="submit", value="создать статью">
+    <input type="submit" value="создать статью">
 </form>
  
 
