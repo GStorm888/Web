@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from article import Article
 import os
 from database import Database
@@ -54,18 +54,17 @@ database = {
 
 @app.route("/article/<name>")
 def article(name):
-    article = database[name]
-    title_article=article['title_article']
-    text_article=article['text_article']
-    article_image_title=article['article_image_title']
-    article_image_path= article['article_image_path']
-    return render_template('article.html',
-                            title_article=title_article,
-                            text_article=text_article, 
-                            article_image_title=article_image_title, 
-                            article_image_path=article_image_path)
+    article = Database.find_article_by_title(name)
+    if article is None:
+        return f"<h1> Статьи '{name}' не существует! </h1>"
+    
+    return render_template('article.html', article=article)
 
-
+@app.route("/uploads/<filename>")
+def uploaded_photo(filename):
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        filename)
 
 @app.route("/add_article", methods=["GET", "POST"])
 def add_article():
@@ -94,7 +93,19 @@ def add_article():
     article = Article(title, content, photo.filename)
     Database.save(article)
 
-    return redirect(url_for("index"))
+    return redirect(url_for("show_articles"))
+
+@app.route("/articles")
+def show_articles():
+    articles = Database.get_all_articles()
+
+    groups = []
+    k = 3
+    for i in range(0, len(articles), k):
+        groups.append(articles[i:i+k])
+
+    return render_template('articles.html', groups=groups)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

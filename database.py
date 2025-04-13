@@ -10,3 +10,10 @@ class Database:
     @staticmethod
     def get_all_articles():
         return Database.articles
+    
+    @staticmethod
+    def find_article_by_title(title):
+        for article in Database.articles:
+            if article.title == title:
+                return article
+        return None
