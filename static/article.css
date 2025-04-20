@@ -54,7 +54,12 @@ p{
     margin-bottom: 40px;
 }
 
+.article_text{
+    width: 60%;
+}
+
 .article_image{
+    width:40%;
     padding-left: 40px;
     padding-right: 40px;
     display: flex;
@@ -62,6 +67,12 @@ p{
     align-items: center;
     flex-direction: column;
 }
+
+.article_image img{
+    max-width: 250px;
+    height: auto;
+}
+
 .article_image_name{
     margin: 20px;
 }
