@@ -7,6 +7,8 @@
     <meta charset="utf-8"> <!--Тип кодировки HTML документа-->
     <title>Рувики</title> <!--Текст который отображаемы текст вместо цифр вверху-->
     <link rel="stylesheet" href="../static/styles.css"><!--Файлы в которых стили-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='articles.css' ) }}">
+
 </head>
 
 <body> <!--Тело кода-->
@@ -18,6 +20,7 @@
                     <img src="../static/logo.svg" alt="Лого РУВИКИ" id="ruwiki_icon" /><!--Добавление картинки-->
                 </a><!--Нужно бля добавления кртинки-->
                 <div id="header_buttons"><!--Обозначение ID-->
+                    <a class="button_create_article" href="{{ url_for('add_article') }}" >Создать статью</a>
                     <button class="button_login ">Войти</button><!--Создание кнопки-->
                     <button class="button_change_font">Aа</button>
                 </div>
@@ -66,7 +69,7 @@
 
         <div id="for_you_and_count">
 
-            <div id="for_you">
+            <!-- <div id="for_you">
                 <p class="card_for_you">
                     <strong>Для вас</strong>
                 </p>
@@ -75,15 +78,34 @@
                 </p>
                 <p class="card_for_you">
                     <strong>Новые статьи</strong>
-                </p>
-            </div>
+                </p> -->
+
             <p id="count_articles">
                 Сейчас много статей <br>на русском языке
             </p>
+                <div class="table_and_name">
+        <h2 class="article_table_name">Список статей</h2>
+        <div class="article_table">
+            <div class="article_table">
+                {% for group in groups %}
+                <div class="article_table_row">
+                    {% for article in group %}
+                    <div class="article_card">
+                        <a href="{{ url_for('article', name=article.title)}}">
+                            <h3>{{ article.title }}</h3>
+                        </a>
+                    </div>
+                    {% endfor%}
+                </div>
+                {% endfor%}
+            </div>
         </div>
     </div>
+        </div>
 
     </div>
+
+    
 
 </body>
 

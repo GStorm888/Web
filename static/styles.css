@@ -101,6 +101,14 @@ h1 {
     height: auto;
 }
 
+.button_create_article {
+    color: #5e2ec8;
+    border: none;
+    border-radius: 15px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
 .button_login {
     color: #5e2ec8;
     border: none;
@@ -176,6 +184,7 @@ h1 {
     color:#7b7c80;
     position: absolute;/*Ставит объект относительно элементов*/
     right: 0;/*Начало с правого края*/
+    border-bottom: 3px solid #97c5d7;
 }
 
 #for_you_and_count {

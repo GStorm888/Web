@@ -13,10 +13,16 @@
 }
 
 .article_table{
-
+    margin-top: 20px;
 }
 
 .article_table_row{
     display: flex;
     justify-content: center;
+}
+
+.table_and_name{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
