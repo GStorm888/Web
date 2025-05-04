@@ -12,6 +12,10 @@
     margin-bottom: 20px;
 }
 
+.article_card a {
+    text-align: center;
+}
+
 .article_table{
     margin-top: 20px;
 }

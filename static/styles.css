@@ -162,34 +162,9 @@ h1 {
     border-bottom-right-radius: 40px;
 }
 
-#for_you {
-    width: 100%;
-    height: auto;
-    display: flex;
-    border-bottom: 3px solid #32a1ce;/*Оконтовка объекта с определенной стороны*/
-}
-
-.card_for_you {
-    margin: 10px;
-}
-
 #head_for_you {
     width: 100%;
     height: auto;
-    display: grid;
-    justify-content: space-between;/*Расстановка объектов на страницу*/
-}
-
-#count_articles {
-    color:#7b7c80;
-    position: absolute;/*Ставит объект относительно элементов*/
-    right: 0;/*Начало с правого края*/
-    border-bottom: 3px solid #97c5d7;
-}
-
-#for_you_and_count {
-    width: auto;
-    height: auto;
     display: flex;
-    justify-content: start;
+    justify-content: center;/*Расстановка объектов на страницу*/
 }
