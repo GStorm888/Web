@@ -1,10 +1,12 @@
 from article import Article
 import sqlite3
-
 class Database:
     SCHEMA = "schema.sql"
     DATABASE = "database.db"
-
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def execute(sql, params=()):
         # ПОДКЛЮЧАЕМСЯ К БАЗЕ ДАННЫХ
@@ -18,7 +20,10 @@ class Database:
 
         # фиксируем измнения в бвзе данных
         connection.commit()
-
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def select(sql, params=()):
         connection = sqlite3.connect(Database.DATABASE)
@@ -34,15 +39,19 @@ class Database:
             article = Article(title, content, photo, id)
             articles.append(article) 
         return articles
-
-
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def create_table():
 
         with open(Database.SCHEMA) as schema_file:
             Database.execute(schema_file.read())
-
-
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def save(article:Article): #Нужна проверка на наличие такой же статьи
         if Database.find_article_by_title(article.title) is not None:
@@ -50,14 +59,20 @@ class Database:
         Database.execute("INSERT INTO articles (title, content, photo) VALUES (?, ?, ?)",
                        [article.title, article.content, article.photo])
         return True
-    
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def find_articles_by_id(id):
         articles = Database.select("SELECT * FROM articles WHERE id = ?", [id])
         if not articles:
             return None
         return articles[0]
-    
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def delete_article_by_id(id):
         article = Database.find_articles_by_id(id)
@@ -67,6 +82,17 @@ class Database:
         Database.execute("DELETE FROM articles WHERE id = ?", [id])
         return True
 
+    @staticmethod
+    def update_article(id, title, content, photo):
+        article = Database.find_articles_by_id(id)
+        if article is None:
+            return False
+        
+        Database.execute("UPDATE articles SET title = ?, content = ?, photo = ? WHERE id = ?",
+                        [title, content, photo, id])
+        return True
+
+    
 
     @staticmethod
     def get_all_articles():

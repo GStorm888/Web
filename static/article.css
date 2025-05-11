@@ -41,6 +41,12 @@ p{
     background-color: #5e2ec8;
     transition: background-color 0.7s ease-in-out;
 }
+
+.controls_bttn:not(:hover){
+    color: black;
+    background-color: white;
+    transition: background-color 0.7s ease-in-out;
+}
 .article {
     background-color: white;
     padding: 20px;
