@@ -1,5 +1,7 @@
 from article import Article
 import sqlite3
+import hashlib
+
 class Database:
     SCHEMA = "schema.sql"
     DATABASE = "database.db"
@@ -81,7 +83,10 @@ class Database:
         
         Database.execute("DELETE FROM articles WHERE id = ?", [id])
         return True
-
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def update_article(id, title, content, photo):
         article = Database.find_articles_by_id(id)
@@ -91,9 +96,10 @@ class Database:
         Database.execute("UPDATE articles SET title = ?, content = ?, photo = ? WHERE id = ?",
                         [title, content, photo, id])
         return True
-
-    
-
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def get_all_articles():
         connection = sqlite3.connect(Database.DATABASE)
@@ -107,7 +113,10 @@ class Database:
             article = Article(title, content, photo, id)
             articles.append(article) 
         return articles
-    
+    """""
+    """""
+    """""
+    """""
     @staticmethod
     def find_article_by_title(title):
         connection = sqlite3.connect(Database.DATABASE)
@@ -123,3 +132,20 @@ class Database:
         id, title, content, photo = articles[0]
         article = Article(title, content, photo, id)
         return article
+    """""
+    """""
+    """""
+    """""
+    @staticmethod
+    def register_user(email, phone, password):
+        password_hash = hashlib.md5(password.encode().hexdigest())
+        Database.execute("INSERT INTO users (email, phone, password_hash) VALUES (?, ?, ?)",
+                         [email, phone, password_hash])
+    """""
+    """""
+    """""
+    """""
+    @staticmethod
+    def find_user_by_email_or_phone(email_or_phone):
+        Database.execute(("SELECT * FROM users WHERE email = ? OR phone = ?", 
+                          [email_or_phone, email_or_phone]))

@@ -21,7 +21,8 @@ h1 {
 }
 
 
-.add_article_form input[type="text"] {
+.add_article_form input[type="text"],
+.add_article_form input[type="password"] {
     border-radius: 7px;
     border: 1px lightgrey solid;
     height: 20px;
@@ -52,3 +53,11 @@ h1 {
     cursor: pointer;
 }
 
+.error_message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cd;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+}

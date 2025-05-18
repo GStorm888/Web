@@ -7,13 +7,41 @@ from database import Database
 """""
 """""
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "B888B8B8B88B8В8В8В8В8"
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-"""""
-"""""
-"""""
-"""""
 Database.create_table()
+"""""
+"""""
+"""""
+"""""
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    if request.method == "GET":
+        return render_template("register.html")
+    
+    user_email = request.form.get("user_email")
+    user_phone = request.form.get("user_phone")
+    user_password = request.form.get("user_password")
+    user_password_repeat = request.form.get("user_password_repeat")
+
+    if not user_email:
+        flash("Электронная почта не может быть пустой!")
+        return redirect(request.url)
+
+    if not user_phone:
+        flash("Номер телефона не может быть пустой!")
+        return redirect(request.url)
+    
+    if not user_password: #подумать об совмещении 1
+        flash("Пароль не может быть пустой!")
+        return redirect(request.url)
+    
+    if not user_password_repeat or user_password != user_password_repeat: #подумать об совмещении 2
+        flash("Пароли не совпадают!")
+        return redirect(request.url)
+
+    return redirect(url_for("index"))
 """""
 """""
 """""
@@ -84,7 +112,7 @@ def edit_article(id):
     else:
         #НАДО УДАЛИТЬ СТАРУЮ ФОТКУ
         photo.save(app.config["UPLOAD_FOLDER"] + photo.filename)
-        filename = article.photo
+        filename = photo.filename
     Database.update_article(id, title, content, filename)
     return redirect(url_for("article", name=title))
 """""
