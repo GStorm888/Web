@@ -21,7 +21,15 @@
                 </a><!--Нужно бля добавления кртинки-->
                 <div id="header_buttons"><!--Обозначение ID-->
                     <a class="button_create_article" href="{{ url_for('add_article') }}" >Создать статью</a>
-                    <button class="button_login ">Войти</button><!--Создание кнопки-->
+
+                    <form style="display: inline;" action=" {{ url_for('login') }}" method="GET">
+                        <button class="button_login ">Войти</button><!--Создание кнопки-->
+                    </form>
+
+                    <form style="display: inline;" action=" {{ url_for('register') }}" method="GET">
+                        <button class="button_login ">Регистрация</button>  
+                    </form>
+                    
                     <button class="button_change_font">Aа</button>
                 </div>
             </div>

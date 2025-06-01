@@ -6,3 +6,9 @@ class Article:
     content: str
     photo: str
     id: int = None
+
+@dataclass
+class User:
+    email: str
+    phone: str
+    id: int = None
